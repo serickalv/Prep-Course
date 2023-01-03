@@ -41,7 +41,7 @@ function suma(x, y) {
 function resta(x, y) {
   // Resta "y" de "x" y devuelve el valor
   // Tu código:
-  return (y-x);
+  return (x-y);
 }
 
 function multiplica(x, y) {
@@ -198,7 +198,7 @@ function obtenerSaludo(nombre) {
   // Toma la string "nombre" y concatena otras string en la cadena para que tome la siguiente forma:
   // "Martin" -> "Hola Martin!"
   // Tu código:
-  return 'Hola '+nombre;
+  return 'Hola '+nombre+'!';
 }
 
 function obtenerAreaRectangulo(alto, ancho) {
@@ -238,7 +238,7 @@ function esVocal(letra){
   //Escribe tu código aquí
   if(letra.length===1 && (letra==='a' ||letra==='e'||letra==='i'||letra==='o'||letra==='u'))
   {
-    return 'es vocal';
+    return 'Es vocal';
   }
   return 'Dato incorrecto'
 }

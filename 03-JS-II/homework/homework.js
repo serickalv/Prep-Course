@@ -5,12 +5,23 @@ function obtenerMayor(x, y) {
   // Devuelve el número más grande
   // Si son iguales, devuelve cualquiera de los dos
   // Tu código:
+  if(x>y){
+    return x;
+  }else{
+    return y;
+  }
+
 }
 
 function mayoriaDeEdad(edad) {
   //Determinar si la persona según su edad puede ingresar a un evento.
   //Si tiene 18 años ó más, devolver --> "Allowed"
   //Si es menor, devolver --> "Not allowed"
+  if(edad>=18){
+  return "Allowed";
+  }else{
+    return "Not allowed"
+  }
 }
   
 function conection(status) {
@@ -19,6 +30,11 @@ function conection(status) {
   //Cuando el estado es igual a 2, el usuario está "Away"
   //De lo contrario, presumimos que el usuario está "Offline"
   //Devolver el estado de conexión de usuario en cada uno de los casos.
+  switch (status) {
+    case 1: return "Online";break;
+    case 2: return "Away";break;
+    default: return "Offline";break;
+  }
 }
 
 function saludo(idioma) {
@@ -28,6 +44,14 @@ function saludo(idioma) {
   // Si "idioma" es "ingles", devuelve "Hello!"
   // Si "idioma" no es ninguno de los anteiores o es `undefined` devuelve "Hola!"
   // Tu código:
+  var saludo=null;
+  switch (idioma) {
+    case "aleman":saludo="Guten Tag!"; break;
+    case "mandarin":saludo="Ni Hao!"; break;
+    case "ingles":saludo="Hello!"; break;
+    default:saludo="Hola!";break;    
+  }
+  return saludo;
 }
 
 function colors(color) {
@@ -38,18 +62,39 @@ function colors(color) {
   //En caso que el color recibido sea "orange", devuleve --> "This is orange"
   //Caso default: devuelve --> "Color not found"
   //Usar el statement Switch.
+  var rpta=null;
+  switch (color) {
+    case "blue":rpta="This is blue"; break;
+    case "red":rpta="This is red"; break;
+    case "green":rpta="This is green"; break;
+    case "orange":rpta="This is orange"; break;
+    default:rpta="Color not found";break;
+  }
+  return rpta;
 }
 
 function esDiezOCinco(numero) {
   // Devuelve "true" si "numero" es 10 o 5
   // De lo contrario, devuelve "false"
   // Tu código:
+  var rpta=false;
+  if (numero===10 || numero===5)
+  {
+    rpta =true;
+  }
+  return rpta;
 }
 
 function estaEnRango(numero) {
   // Devuelve "true" si "numero" es menor que 50 y mayor que 20
   // De lo contrario, devuelve "false"
   // Tu código:
+  var rpta=false;
+  if (numero<50 && numero>20)
+  {
+    rpta =true;
+  }
+  return rpta;
 }
 
 function esEntero(numero) {
@@ -60,6 +105,12 @@ function esEntero(numero) {
   // De lo contrario, devuelve "false"
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código:
+  var rpta=false;
+  if ((numero*10)%10 ===0)
+  {
+    rpta =true;
+  }
+  return rpta;
 }
 
 function fizzBuzz(numero) {
@@ -67,6 +118,24 @@ function fizzBuzz(numero) {
   // Si "numero" es divisible entre 5, devuelve "buzz"
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
+  var rpta=null;
+  if (numero%3===0)
+  {
+    if(numero%5===0){
+      rpta="fizzbuzz";
+    }else{
+      rpta="fizz";
+    }
+  }else{
+    if(numero%5===0)
+    {
+      rpta="buzz";
+    }else
+    {
+      rpta =numero;
+    }
+  }
+  return rpta;
 }
 
 function operadoresLogicos(num1, num2, num3) {
@@ -76,7 +145,39 @@ function operadoresLogicos(num1, num2, num3) {
   //Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
+  var prod=num1*num2*num3;
+  var rpta =false;
+  if (prod===0)
+  {
+    rpta ="Error";
+  }else
+  {
+    if(prod/num1 >0)
+    {
+      if(prod/num2>0)
+      {
+        if(num1>num2)
+        {
+          if(num1>num3)
+          {
+            rpta="Número 1 es mayor y positivo";
+          }
+          if(num3>num1)
+          {
+            rpta =num3+1;
+          }
+        }else{
+          if(num3>num2)
+          {
+            rpta =num3+1;
+          }
+        }
+      }else{ rpta="Hay negativos"}
+    }else{rpta="Hay negativos"}
+  }
+  return rpta;
 }
+
 
 function esPrimo(numero) {
   // Devuelve "true" si "numero" es primo
@@ -84,32 +185,69 @@ function esPrimo(numero) {
   // Pista: un número primo solo es divisible por sí mismo y por 1
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
+  var rpta=true;
+  if (numero ===0 || numero ===1)
+  {
+    rpta=false;
+  }
+  if (numero>1)
+  {
+    for(var i=2; i<50;i++){
+      if(numero%i===0){
+        if(numero!==i){
+        rpta=false;
+        }
+      }
+    }
+  }
+  return rpta;
 }
 
 function esVerdadero(valor){
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
-
+  var rpta="Soy falso";
+  if(valor){
+    rpta="Soy verdadero"
+  }
+  return rpta;
 }
 
 function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí   
+  var rpta= [0];
   
+  for(var i=1;i<11;i++){
+    rpta.push(6*i);
+  }
+  return rpta;
 }
 
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-  
+  var rpta =false;
+  if (numero>99 && numero <1000)
+  {
+    rpta =true;
+  }
+  return rpta;
 }
 
 function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
+  var i=1;
+  var rpta=numero;
+  do{
+    rpta+=5;
+    i++;
+  }while(i<9);
+  return rpta;
 }
 
 
@@ -131,5 +269,5 @@ module.exports = {
   esVerdadero,
   tablaDelSeis,
   tieneTresDigitos,
-  doWhile
+  doWhile,
 };
