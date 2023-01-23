@@ -1,0 +1,35 @@
+body{
+    background-image: url("https://cdn0.recetasgratis.net/es/posts/3/8/7/aji_de_pollo_16783_orig.jpg");
+    display: flex;
+   align-items: center;
+   justify-content: center;
+   justify-items: center;
+   flex-direction: column;
+}
+div{
+    /*margin:0 auto;*/
+   width: 500px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   justify-items: center;
+   flex-direction: column;
+}
+h1 {
+    color: red;
+}
+img {
+    width: 400px;
+}
+#thirdDiv{
+    height: 600px;
+    background-color:aquamarine;
+    padding: 50px;
+    border-radius: 2px;
+    border-color: black;
+    border-style: groove;
+}
+#spanID{
+    font-size: 18px;
+    margin: 50px;
+}
