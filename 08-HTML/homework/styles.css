@@ -33,3 +33,88 @@ img {
     font-size: 18px;
     margin: 50px;
 }
+
+
+
+/*Codigo específico para cv.html*/
+main{
+    background-color: rgb(147, 182, 248);
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 70%;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    width: 900px;
+    min-width: 600px;
+}
+header h1{
+    color: rgb(236, 231, 241);
+}
+.presentacion{
+    width: 600px;
+    min-width: 400px;
+    border-radius: 10px;
+    border-color: black;
+    border-style:dashed;
+}
+#curriculum{
+    background-image: none;
+    background-color: rgb(93, 138, 138);
+}
+section{
+    padding: 10px;
+}
+.complemento{
+    width: 300px;
+    min-width: 200px;
+    font-size: 18px;    
+}
+.foto{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    border-right: 3px;  
+}
+.foto img{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+.extras{
+    width: 900px;
+    min-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: row;
+    background-color: rgb(147, 182, 248);
+}
+
+.hobbies{
+    width: 300px;
+    min-width: 200px;
+}
+
+.expectativas{
+    width: 600px;
+    min-width: 400px;
+}
+
+footer{
+    background-color: rgb(147, 182, 248);
+    width: 900px;
+    min-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: row;    
+}
+
+h5{
+    padding-left: 50px;
+}
