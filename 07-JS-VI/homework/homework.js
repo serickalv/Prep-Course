@@ -30,7 +30,6 @@ function operacionMatematica(n1, n2, cb) {
   //Devolver el callback pasándole como argumentos los números recibidos.
   //Tu código:
   return cb(n1,n2);
-
 }
 
 function sumarArray(numeros, cb) {
@@ -61,12 +60,25 @@ function map(array, cb) {
   // Itera sobre cada valor en "array", pásalo a `cb` y luego ubicar el valor devuelto por `cb` en un nuevo array
   // El nuevo array debe tener la misma longitud que el array del argumento
   //Tu código:
+  var newArr=[];
+  for (let i=0;i<array.length;i++){
+    newArr[i]=cb(array[i]);
+  }
+  return newArr;
 }
 
 function filter(array) {
   //Filtrar todos los elementos del array que comiencen con la letra "a".
   //Devolver un nuevo array con los elementos que cumplen la condición
   //Tu código:
+  var newArr=[];
+  for (let i=0;i<array.length;i++){
+    if(array[i].charAt(0)==="a")
+    {
+      newArr[newArr.length]=array[i];
+    }
+  }
+  return newArr;
 }
 
 // No modificar nada debajo de esta línea
