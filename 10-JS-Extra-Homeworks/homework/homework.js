@@ -10,6 +10,14 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+  var mat=[];
+  let pass=Object.keys(objeto);
+  let valores=Object.values(objeto);
+  for (let i=0; i<pass.length;i++){
+    //mat[i]=["["+pass[i]+","+valores[i]+"]"];
+    mat[i]=new Array('['+pass[i]+','+valores[i]+']');
+  }
+  return mat;
 }
 
 
@@ -18,14 +26,65 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+  var arr=[];
+  var rpta=[];
+  var cont=0;
+  arr[0]=string.charAt(0);
+  for(var i=1;i<string.length;i++){
+    for(var j=0;j<arr.length;j++){
+        if(arr[j]!==string.charAt(i)){
+        cont++;
+        }      
+      }
+      if(cont===j){
+        arr[arr.length]=string.charAt(i);
+      }
+      cont=0;
+    }
+  var aux=null;
+  for (var i=1; i<arr.length;i++){
+    for(var j=0; j<arr.length-1;j++){
+      if(arr[i]<arr[j]){
+        aux=arr[i];
+        arr[i]=arr[j];
+        arr[j]=aux;
+      }
+    }
+  }
+   
+  for(var k=0;k<arr.length;k++){
+    var contador=0;
+    for (var l=0; l<string.length;l++){
+      if(arr[k]===string.charAt(l)){
+        contador++;
+      }
+    }
+    rpta[k]=contador;
+  }
+  var final=new Object();
+  for(var i=0; i<rpta.length;i++){
+    final[arr[i]]=rpta[i];
+  }
+  return final;
 }
-
 
 function capToFront(s) {
   //Realiza una función que reciba como parámetro un string y mueva todas las letras mayúsculas
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  var patron='';
+  var minu='';
+  var rpta='';
+  for (let i=0;i<s.length;i++){
+    patron=s.charAt(i).toUpperCase();
+    if(s.charAt(i)===patron){
+      rpta+=s.charAt(i);
+    }else{
+      minu+=s.charAt(i);
+    }
+  }
+  return rpta+minu;
 }
 
 
@@ -35,6 +94,25 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
+  var rpta="";
+  var local="";
+  for(var i=0;i<str.length;i++){
+    if(i===str.length - 1){
+      local+=str.charAt(i);
+    }
+    if(str.charAt(i)===' ' || i===str.length - 1){
+      for(let j=local.length+1;j>=0;j--){
+        rpta+=local.charAt(j);
+      }
+      if(i!=str.length-1){
+        rpta+=' ';
+      }      
+      local='';
+    }else{
+      local+=str.charAt(i);
+    }
+  }
+  return rpta;
 } 
 
 
